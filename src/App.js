@@ -93,7 +93,7 @@ class App extends Component {
         <div className={classes.App}>
           <h1>Hi, I'm a React App</h1>
           <p className={assignedClasses.join(' ')}>This is really working!!</p>
-          <button className={btnClass.join(' ')}  alt={this.state.showPersons} onClick={this.togglePersonsHandler} >
+          <button className={btnClass.join(' ')} onClick={this.togglePersonsHandler} >
             Toggle Persons
           </button>
           {persons}
