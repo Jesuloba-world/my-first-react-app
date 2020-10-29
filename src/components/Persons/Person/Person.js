@@ -1,36 +1,9 @@
-import React from 'react';
-// import styled from 'styled-components';
+import React, { Component } from 'react';
+
 import classes from './Person.css';
 
-// import './Person.css'; 
-
-// const StyledDiv = styled.div`
-//         width: 60%;
-//         margin: 16px auto;
-//         border: 1px solid #eee;
-//         box-shadow: 0 2px 3px #ccc;
-//         padding: 16px;
-//         text-align: center;
-//         position: relative;
-
-//         & button {
-//         position: absolute;
-//         top: 10px;
-//         right: 10px;
-//         height: 20px;
-//         width: 20px;
-//         outline: none;
-//         background-color: #eee;
-//         border: none;
-//         border-radius: 100%;
-//         }
-
-//         @media (min-width: 500px) {
-//             width: 450px;
-//         }
-// `;
-
-const person = (props) => {
+/* const person = (props) => {
+    console.log("[person.js] rendering...");
 
     return (
         <div className={classes.Person}>
@@ -44,3 +17,25 @@ const person = (props) => {
 };
 
 export default person;
+*/
+
+class Person extends Component {
+
+
+
+    render() {
+        console.log("[person.js] rendering...");
+
+        return (
+            <div className={classes.Person}>
+                <p>I'm {this.props.name} and I am {this.props.age} years old</p>
+                <p>{this.props.children}</p>
+
+                <input type="text" onChange={this.props.changed} value={this.props.name} />
+                <button onClick={this.props.click} >X</button>
+            </div>
+        );
+    }; 
+}
+
+export default Person;
