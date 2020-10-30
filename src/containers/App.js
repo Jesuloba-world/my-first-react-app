@@ -1,25 +1,11 @@
 import React, { Component } from 'react';
-// import styled from 'styled-components';
 
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
+import withClass from '../hoc/withClass';
+import Aux from '../hoc/Aux';
 
-
-// const StyledButton = styled.button`
-//   background-color: ${(props) => props.alt ? 'red' : 'green'};
-//   color: white;
-//   font: inherit;
-//   border: 1px solid blue;
-//   padding: 8px;
-//   cursor: pointer;
-//   transition: all .2s;
-
-//   &:hover {
-//     background-color: ${(props) => props.alt ? 'salmon' : 'lightgreen'};
-//     color: black;
-//   }
-// `;
 
 class App extends Component {
 
@@ -99,7 +85,7 @@ class App extends Component {
     }
 
     return (
-        <div className={classes.App}>
+        <Aux>
           <button onClick={() => {
             this.setState({ showCockpit: !(this.state.showCockpit) })
           }} >Toggle Cockpit</button>
@@ -113,24 +99,12 @@ class App extends Component {
             /> ) : null
           }
           {persons}
-        </div>
+        </Aux>
     );
   }
 
 
 }
 
-export default App;
+export default withClass(App, classes.App);
 
-
-/* <Person 
-name={this.state.persons[0].name} 
-age={this.state.persons[0].age} />
-<Person 
-name={this.state.persons[1].name} 
-age={this.state.persons[1].age} 
-click={this.switchNameHandler.bind(this, 'Max!')} 
-changed = {this.nameChangedHandler} >My Hobbies: Playing games</Person>
-<Person 
-name={this.state.persons[2].name} 
-age={this.state.persons[2].age} /> */
